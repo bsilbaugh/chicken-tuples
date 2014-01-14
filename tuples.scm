@@ -9,7 +9,7 @@
 
   (import scheme chicken)
 
-(define-syntax make-tuple
+(define-syntax define-tuple
   (er-macro-transformer
    (lambda (exp rename comp)
 	 (letrec ((rng 
@@ -81,26 +81,26 @@
 
 ;;; Tuple instantiations
 
-(make-tuple unit 0)
+(define-tuple unit 0)
 
-(make-tuple single 1)
+(define-tuple single 1)
 
-(make-tuple double 2)
+(define-tuple double 2)
 
-(make-tuple triple 3)
+(define-tuple triple 3)
 
-(make-tuple quad 4)
+(define-tuple quad 4)
 
-(make-tuple quintuple 5)
+(define-tuple quintuple 5)
 
-(make-tuple sextuple 6)
+(define-tuple sextuple 6)
 
-(make-tuple septuple 7)
+(define-tuple septuple 7)
 
-(make-tuple octuple 8)
+(define-tuple octuple 8)
 
-(make-tuple nonuple 9)
+(define-tuple nonuple 9)
 
-(make-tuple decuple 10)
+(define-tuple decuple 10)
 
 ); module
