@@ -33,6 +33,21 @@
 				 `(define ,(symbol-append name '-reduce)
 					(lambda (f tpl)
 					  (f ,@(map (lambda (i) `(,(elem-acc name i) tpl)) (rng 0 size)))))))
+			  (for-each-ufun
+			   (lambda (name size)
+				 `(define ,(symbol-append name '-for-each-ufun)
+					(lambda (f tpl)
+					  (begin
+					  ,@(map (lambda (i) `(f (,(elem-acc name i) tpl))) (rng 0 size)))))))
+			  (for-each-bfun 
+			   (lambda (name size)
+				 `(define ,(symbol-append name '-for-each-bfun) 
+					(lambda (f tpl-1 tpl-2)
+					  (begin
+					   ,@(map (lambda (i) 
+								`(f (,(elem-acc name i) tpl-1)
+									(,(elem-acc name i) tpl-2)))
+							  (rng 0 size)))))))
 			  (map-ufun 
 			   (lambda (name size)
 				 `(define ,(symbol-append name '-map-ufun) 
@@ -55,6 +70,10 @@
 		  ,(make name size)
 		  ;; reduce map
 		  ,(reduce name size)
+		  ;; unitary function for-each
+		  ,(for-each-ufun name size)
+		  ;; binary function for-each
+		  ,(for-each-bfun name size)
 		  ;; unitary function map
 		  ,(map-ufun name size)
 		  ;; binary function map
