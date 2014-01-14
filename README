@@ -16,7 +16,7 @@ for-each.
 
 The expectation is that, for problems of fixed dimension, the n-tuples
 provided by Tuples will provide better space and time performance than
-Scheme vectors or lists; e.g. the implementation of vector algebra
+Scheme vectors or lists; e.g. the implementation of vector algebra on
 3-dimensional spaces. Preliminary benchmarks confirm this expectation.
 
 Status
