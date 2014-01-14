@@ -1,0 +1,7 @@
+
+(compile -s -O2 -d0 "tuples.scm" -j tuples)
+(compile -s -O2 -d0 "tuples.import.scm")
+
+(install-extension
+ 'tuples
+ '("tuples.so" "tuples.import.so"))

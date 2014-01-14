@@ -1,0 +1,5 @@
+
+((author "Benjamin Silbaugh")
+ (synopsis "Static tuple types.")
+ (license "BSD")
+ (files "tuples.setup" "tuples.scm"))
