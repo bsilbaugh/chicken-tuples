@@ -1,8 +1,33 @@
 
                                 ~ Tuples ~
 
-An implementation of tuples in Chicken Scheme
+An implementation of (static) n-tuples in Chicken Scheme
 
 Copyright 2014 Benjamin Silbaugh
 
 See LICENSE for redistribution and modification permissions.
+
+Description
+===========
+
+Tuples implements sequences of n elements (p1, ..., pn) as data structures
+of fixed size, and provides analogs of the Scheme list operations map and
+for-each. 
+
+The expectation is that, for problems of fixed dimension, the n-tuples
+provided by Tuples will provide better space and time performance than
+Scheme vectors or lists; e.g. the implementation of vector algebra
+3-dimensional spaces. Preliminary benchmarks confirm this expectation.
+
+Status
+======
+
+Tuples is usable at this point. However, breaking changes may occur without
+notice, and there may still be critical bugs.
+
+Installation
+============
+
+Tuples is packaged as a Chicken Scheme Egg. Installation should simply be a
+matter of downloading a snapshot of the source tree, and then running
+chicken-install.
