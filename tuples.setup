@@ -4,4 +4,5 @@
 
 (install-extension
  'tuples
- '("tuples.so" "tuples.import.so"))
+ '("tuples.so" "tuples.import.so")
+ '((version "0.1.0")))
